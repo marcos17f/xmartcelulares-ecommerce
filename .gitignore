@@ -1,0 +1,15 @@
+# Editor/IDE
+.idea/
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel/
+
+# Claude Code / agent skills (local tooling, not part of the site)
+.agents/
+.claude/
+skills-lock.json

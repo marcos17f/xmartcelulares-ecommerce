@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formas de pagamento — X-mart</title>
+<meta name="description" content="Formas de pagamento aceitas na X-mart: Pix com desconto e cartão de crédito em até 12x sem juros.">
+<meta name="theme-color" content="#08090c">
+<link rel="icon" type="image/svg+xml" href="img/logo/xmart.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+<div id="header-mount"></div>
+
+<div class="wrap policy-wrap" id="main-content" tabindex="-1">
+  <div class="crumb"><a href="index.html">Início</a> / <span>Formas de pagamento</span></div>
+  <h1>Formas de pagamento</h1>
+  <p class="lead">Pagamento combinado direto com a gente na hora de fechar o pedido — simples e sem burocracia.</p>
+
+  <div class="policy-section">
+    <div class="pay-method-row">
+      <div class="pay-method-icon"></div>
+      <div class="pay-method-info">
+        <h3>Pix</h3>
+        <p>Confirmação imediata e desconto à vista. Você recebe a chave Pix direto no WhatsApp depois de confirmar o pedido.</p>
+      </div>
+    </div>
+    <div class="pay-method-row">
+      <div class="pay-method-icon"></div>
+      <div class="pay-method-info">
+        <h3>Cartão de crédito</h3>
+        <p>Parcelamos em até 12x sem juros nos principais cartões. O link de pagamento é enviado após a confirmação do pedido.</p>
+      </div>
+    </div>
+    <div class="pay-method-row">
+      <div class="pay-method-icon"></div>
+      <div class="pay-method-info">
+        <h3>Boleto bancário</h3>
+        <p>Disponível para pedidos combinados diretamente com a equipe, com prazo de compensação de até 2 dias úteis.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="policy-section">
+    <h2>Sobre o frete</h2>
+    <p>O valor do frete depende do seu CEP e é calculado e combinado com você antes da confirmação final do pagamento — sem surpresas.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Dúvidas sobre pagamento</h2>
+    <p>Fala com a gente antes ou depois de fechar o pedido:</p>
+    <div class="contact-grid" style="margin-top:20px;" id="policy-contacts"></div>
+  </div>
+</div>
+
+<div id="footer-mount"></div>
+
+<script src="js/icons.js"></script>
+<script src="js/products.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/contacts.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.pay-method-icon').forEach((el, i) => {
+      el.innerHTML = [ICONS.pix, ICONS.card, ICONS.boleto][i];
+    });
+    const root = document.getElementById('policy-contacts');
+    if(root) root.innerHTML = renderContactCards('Olá! Tenho uma dúvida sobre formas de pagamento.');
+  });
+</script>
+</body>
+</html>

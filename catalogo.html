@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo — X-mart</title>
+<meta name="theme-color" content="#08090c">
+<link rel="icon" type="image/svg+xml" href="img/logo/xmart.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+<div id="header-mount" data-active="catalogo"></div>
+
+<div class="wrap" id="main-content" tabindex="-1">
+  <h1 class="sr-only">Catálogo de produtos</h1>
+  <div class="crumb"><a href="index.html">Início</a> / <span id="crumb-current">Catálogo</span></div>
+</div>
+
+<div class="wrap catalog-layout">
+  <aside>
+    <div class="filter-block">
+      <h4>Categoria</h4>
+      <div id="filter-categories"></div>
+    </div>
+    <div class="filter-block">
+      <h4>Faixa de preço</h4>
+      <div class="filter-opt"><label><input type="radio" name="price" value="all" checked> Todos os preços</label></div>
+      <div class="filter-opt"><label><input type="radio" name="price" value="0-200"> Até R$ 200</label></div>
+      <div class="filter-opt"><label><input type="radio" name="price" value="200-1000"> R$ 200 a R$ 1.000</label></div>
+      <div class="filter-opt"><label><input type="radio" name="price" value="1000-5000"> R$ 1.000 a R$ 5.000</label></div>
+      <div class="filter-opt"><label><input type="radio" name="price" value="5000-999999"> Acima de R$ 5.000</label></div>
+    </div>
+    <div class="filter-block" style="border-bottom:none;">
+      <h4>Disponibilidade</h4>
+      <div class="filter-opt"><label><input type="checkbox" id="filter-stock"> Somente em estoque</label></div>
+      <div class="filter-opt"><label><input type="checkbox" id="filter-promo"> Somente ofertas</label></div>
+    </div>
+  </aside>
+
+  <div>
+    <div class="catalog-top">
+      <span id="result-count">0 produtos</span>
+      <label for="sort-select" class="sr-only">Ordenar por</label>
+      <select id="sort-select">
+        <option value="relevance">Mais relevantes</option>
+        <option value="price-asc">Menor preço</option>
+        <option value="price-desc">Maior preço</option>
+        <option value="name">Nome A–Z</option>
+      </select>
+    </div>
+    <div class="prod-grid" id="catalog-grid"></div>
+  </div>
+</div>
+
+<div id="footer-mount"></div>
+
+<script src="js/icons.js"></script>
+<script src="js/product-art.js"></script>
+<script src="js/products.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/home.js"></script>
+<script src="js/catalogo.js"></script>
+</body>
+</html>
