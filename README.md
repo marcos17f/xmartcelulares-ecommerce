@@ -25,3 +25,4 @@ Depois acesse `http://localhost:8000`.
 ## Dados de exemplo
 
 O catálogo em `js/products.js` contém dados de exemplo — troque nome, preço, estoque e especificações pelos produtos reais da loja antes de publicar. Veja também o comentário `TODO` no rodapé (`js/layout.js`) para substituir o CNPJ placeholder.
+# xmartcelulares-ecommerce
