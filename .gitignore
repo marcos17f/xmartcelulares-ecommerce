@@ -1,3 +1,26 @@
+# Dependências
+node_modules/
+.pnp
+.pnp.js
+
+# Build do Next.js
+.next/
+out/
+build/
+dist/
+next-env.d.ts
+*.tsbuildinfo
+
+# Variáveis de ambiente (nunca commitar segredos)
+.env
+.env*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
 # Editor/IDE
 .idea/
 .vscode/
@@ -9,7 +32,7 @@ Thumbs.db
 # Vercel
 .vercel/
 
-# Claude Code / agent skills (local tooling, not part of the site)
+# Claude Code / agent skills (local tooling, não faz parte do site)
 .agents/
 .claude/
 skills-lock.json
