@@ -1550,7 +1550,7 @@
 /* ---------- RESPONSIVO ---------- */
 @media (max-width: 900px) {
   .listing-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .product-detail {
     padding: 28px 24px;
@@ -1577,7 +1577,11 @@
 
 @media (max-width: 560px) {
   .listing-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .listing-card {
+    padding: 10px;
   }
   .checkout-grid,
   .payment-options {
