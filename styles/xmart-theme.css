@@ -159,9 +159,34 @@ textarea:focus-visible {
 }
 
 .logo img {
-  height: 32px;
+  height: 46px;
   width: auto;
   display: block;
+  filter: drop-shadow(0 0 8px rgba(230, 0, 18, 0.35));
+  transition: filter 280ms ease, transform 280ms ease;
+  animation: logo-glow-pulse 3.2s ease-in-out infinite;
+}
+
+.logo:hover img,
+.logo:focus-visible img {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 16px rgba(255, 30, 30, 0.75));
+  animation-play-state: paused;
+}
+
+@keyframes logo-glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(230, 0, 18, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(230, 0, 18, 0.6));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo img {
+    animation: none;
+  }
 }
 
 .nav {
@@ -836,6 +861,9 @@ textarea:focus-visible {
   }
   .logo a {
     font-size: 20px;
+  }
+  .logo img {
+    height: 36px;
   }
 }
 
