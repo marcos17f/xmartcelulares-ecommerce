@@ -1,33 +1,21 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import Header from '../Header';
 import Footer from '../Footer';
 import CartItem from './CartItem';
 import OrderSummary from './OrderSummary';
 import { useCart } from '../../lib/cart-context';
-import { buildOrderMessage, buildWhatsAppLink } from '../../lib/whatsapp';
 import { formatBRL } from '../../lib/format';
 
 export default function CartPage() {
+  const router = useRouter();
   const { items, updateQuantity, removeItem, subtotal, count } = useCart();
 
   const handleCheckout = () => {
     if (items.length === 0) return;
-
-    const origin = typeof window !== 'undefined' ? window.location.origin : '';
-    const message = buildOrderMessage({
-      items: items.map((item) => ({
-        name: item.name,
-        quantity: item.quantity,
-        priceLabel: formatBRL(item.price),
-        image: item.image,
-      })),
-      total: formatBRL(subtotal),
-      origin,
-    });
-
-    window.open(buildWhatsAppLink(message), '_blank', 'noopener,noreferrer');
+    router.push('/checkout');
   };
 
   return (
@@ -63,7 +51,7 @@ export default function CartPage() {
             <OrderSummary
               subtotal={formatBRL(subtotal)}
               total={formatBRL(subtotal)}
-              ctaLabel="💬 Finalizar Compra pelo WhatsApp"
+              ctaLabel="Finalizar Compra"
               onSubmit={handleCheckout}
             />
           </div>
