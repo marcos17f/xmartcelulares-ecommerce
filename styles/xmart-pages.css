@@ -1234,6 +1234,36 @@
   gap: 8px;
 }
 
+.checkout-pickup-info {
+  margin-left: 38px;
+  margin-top: 14px;
+  background-color: var(--xm-black-secondary);
+  border: 1px solid var(--xm-gray-line);
+  border-radius: var(--xm-radius-md);
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--xm-gray-light);
+}
+
+.checkout-pickup-info p {
+  margin-bottom: 6px;
+  color: var(--xm-white);
+}
+
+.checkout-pickup-info a {
+  color: var(--xm-red);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.checkout-error {
+  margin: 16px 0 0 38px;
+  color: var(--xm-red);
+  font-size: 13px;
+  font-weight: 600;
+}
+
 /* ---------- CONTATO ---------- */
 .contact-page {
   padding: 36px 40px 60px;
@@ -1540,11 +1570,70 @@
 }
 
 .confirmation-cta {
-  display: inline-block;
+  display: block;
+  width: 100%;
+  text-align: center;
   text-decoration: none;
   border: none;
   cursor: pointer;
   font-size: 14px;
+  box-sizing: border-box;
+}
+
+.confirmation-seller-cta {
+  background-color: #25d366;
+  margin-bottom: 12px;
+}
+
+.confirmation-seller-cta:hover {
+  background-color: #1ebe57;
+}
+
+.confirmation-store-info {
+  text-align: left;
+  border: 1px solid var(--xm-gray-line);
+  border-radius: var(--xm-radius-md);
+  padding: 16px 18px;
+  margin-bottom: 18px;
+}
+
+.confirmation-store-title {
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.confirmation-store-info ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--xm-gray-light);
+}
+
+.confirmation-store-info a {
+  color: var(--xm-gray-light);
+  text-decoration: none;
+}
+
+.confirmation-store-info a:hover {
+  color: var(--xm-red);
+}
+
+.btn-cta-outline {
+  background-color: transparent;
+  color: var(--xm-white);
+  border: 1px solid var(--xm-gray-line);
+  padding: 15px 40px;
+  border-radius: var(--xm-radius-sm);
+  font-weight: 700;
+  font-size: 15px;
+  transition: border-color 0.2s ease;
+}
+
+.btn-cta-outline:hover {
+  border-color: var(--xm-red);
 }
 
 /* ---------- RESPONSIVO ---------- */

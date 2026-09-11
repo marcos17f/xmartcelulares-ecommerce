@@ -3,14 +3,13 @@
 import { useState } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
+import { STORE_INFO, buildWhatsAppLink } from '../../lib/whatsapp';
 
-// TODO: substituir pelos dados reais de contato da X-Mart
+// TODO: preencher o horário de funcionamento real da loja
 const CONTACT_INFO = {
-  whatsapp: '(11) 98765-4321',
-  phone: '0800 789 1234',
-  email: 'contato@xmart.com.br',
-  address: 'Av. Paulista, 1000 - São Paulo - SP',
-  hours: 'Seg-Sáb: 09h-20h · Dom: 10h-18h',
+  email: STORE_INFO.email,
+  address: STORE_INFO.addressLabel,
+  hours: 'Seg-Sáb: 09h-20h',
 };
 
 export default function ContactPage() {
@@ -60,20 +59,27 @@ export default function ContactPage() {
             <p className="contact-info-title">Nossas Informações</p>
             <div className="contact-whatsapp">
               <span className="contact-whatsapp-label">
-                <span className="contact-whatsapp-icon">💬</span> {CONTACT_INFO.whatsapp}
+                <span className="contact-whatsapp-icon">💬</span> Fale com um vendedor
               </span>
-              <a
-                href={`https://wa.me/55${CONTACT_INFO.whatsapp.replace(/\D/g, '')}`}
-                className="btn-cta-small"
-              >
+              <a href={buildWhatsAppLink('Olá! Gostaria de tirar uma dúvida.')} className="btn-cta-small">
                 Conversar Agora
               </a>
             </div>
             <ul className="contact-details">
-              <li>📞 {CONTACT_INFO.phone}</li>
               <li>✉️ {CONTACT_INFO.email}</li>
-              <li>📍 {CONTACT_INFO.address}</li>
+              <li>
+                📍{' '}
+                <a href={STORE_INFO.mapsUrl} target="_blank" rel="noreferrer">
+                  {CONTACT_INFO.address}
+                </a>
+              </li>
               <li>🕒 {CONTACT_INFO.hours}</li>
+              <li>
+                📷{' '}
+                <a href={STORE_INFO.instagramUrl} target="_blank" rel="noreferrer">
+                  @xmartcelulares_
+                </a>
+              </li>
             </ul>
             <div className="contact-map-placeholder">
               <span className="contact-map-pin">📍</span>
